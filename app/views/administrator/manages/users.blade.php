@@ -72,8 +72,9 @@
                                         <td>{{$user->is_admin?'Yes':'No'}}</td>
                                         <td>{{$user->is_guest?'Yes':'No'}}</td>
                                         <td>{{$user->is_user_admin?'Yes':'No'}}</td>
-                                        <td>{{$user->is_confirmed?'Yes':'No'}}</td>
-                                        <td><span class="label label-table label-success">Active</span></td>
+                                        <td>{{$user->is_confirmed?
+                                        '<span class="label label-table label-success">Active</span>'
+                                        :'<span class="label label-table label-danger">Inactivate</span>'}}</td>
                                         <td>
                                             <a href="{{URL::to('be_admin/user-profile',$user->id)}}">
                                                 <i class="fa fa-eye"></i>
