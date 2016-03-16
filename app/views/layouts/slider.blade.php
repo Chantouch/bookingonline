@@ -5,6 +5,7 @@
         <div class="slider_container">
             <div class="slide">
                 <!-- Slide image -->
+                {{--<img class="img-responsive" src="{{asset($home_slider->home_slider)}}" alt="">--}}
                 {{HTML::image('images/slider-bg.jpg', 'Lorem Ipsum is simply.')}}
                         <!-- /Slide image -->
                 <!-- Texts container -->

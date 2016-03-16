@@ -74,7 +74,8 @@
                     <a href="#" class="waves-effect waves-light"><i
                                 class="fa fa-cogs"></i><span> Settings and Modules </span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{URL::to('be_admin/add-slider')}}"> Home Slider</a></li>
+                        <li><a href="{{URL::to('be_admin/list-home-slider')}}"> Home Sliders</a></li>
+                        {{-- <li><a href="{{URL::to('be_admin/add-slider')}}"> Home Slider</a></li>--}}
                         <li><a href="#"> Top menu</a></li>
                         <li><a href="#"> Small Menu</a></li>
                         <li><a href="#"> Header style</a></li>

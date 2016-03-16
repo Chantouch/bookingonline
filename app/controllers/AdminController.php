@@ -134,4 +134,13 @@ class AdminController extends BaseController
         User::destroy($id);
         return Redirect::to('be_admin/list-users')->with('alert-success', 'Your record was successfully deleted!');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getListHomeSlider()
+    {
+        $home_slider = HomeSlider::orderBy('id')->paginate(2);
+        return View::make('administrator.manages.list-homeslider', array('home_sliders' => $home_slider));
+    }
 }
