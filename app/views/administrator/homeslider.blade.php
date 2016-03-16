@@ -24,7 +24,7 @@
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 class="page-title">Home page slider</h4>
+                            <h4 class="page-title">Add new slider</h4>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="#">Booking Early</a>
@@ -33,7 +33,7 @@
                                     <a href="#">Settings and modules</a>
                                 </li>
                                 <li class="active">
-                                    Home Slider
+                                    Add new Slider
                                 </li>
                             </ol>
                         </div>
@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
-                                <h1 class="m-t-0 header-title"><span>Home slider</span></h1>
+                                <h1 class="m-t-0 header-title"><span>Add new slider</span></h1>
                                 <p class="text-muted m-b-30 font-13">
                                     Most common form control, text-based input fields. Includes support for all HTML5
                                     types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>,

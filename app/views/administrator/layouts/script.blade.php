@@ -11,43 +11,44 @@
 </script>
 
 <!-- jQuery  -->
-<script src="{{asset('/js/jquery.min.js')}}"></script>
-<script src="{{asset('/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('/js/detect.js')}}"></script>
-<script src="{{asset('/js/fastclick.js')}}"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/detect.js"></script>
+<script src="/js/fastclick.js"></script>
 
-<script src="{{'/js/jquery.slimscroll.js'}}"></script>
-<script src="{{asset('/js/jquery.blockUI.js')}}"></script>
-<script src="{{asset('/js/waves.js')}}"></script>
-<script src="{{asset('/js/wow.min.js')}}"></script>
-<script src="{{asset('/js/jquery.nicescroll.js')}}"></script>
-<script src="{{asset('/js/jquery.scrollTo.min.js')}}"></script>
+<script src="/js/jquery.slimscroll.js"></script>
+<script src="/js/jquery.blockUI.js"></script>
+<script src="/js/waves.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/jquery.nicescroll.js"></script>
+<script src="/js/jquery.scrollTo.min.js"></script>
 
-<script src="{{asset('/plugins/peity/jquery.peity.min.js')}}"></script>
+<script src="/plugins/peity/jquery.peity.min.js"></script>
 
 <!-- jQuery  -->
-<script src="{{asset('/plugins/waypoints/lib/jquery.waypoints.js')}}"></script>
-<script src="{{asset('/plugins/counterup/jquery.counterup.min.js')}}"></script>
+<script src="/plugins/waypoints/lib/jquery.waypoints.js"></script>
+<script src="/plugins/counterup/jquery.counterup.min.js"></script>
 
 
-<script src="{{asset('/plugins/morris/morris.min.js')}}"></script>
-<script src="{{asset('/plugins/raphael/raphael-min.js')}}"></script>
 
-<script src="{{asset('/plugins/raphael/raphael-min.js')}}"></script>
+<script src="/plugins/morris/morris.min.js"></script>
+<script src="/plugins/raphael/raphael-min.js"></script>
 
-<script src="{{asset('/pages/jquery.dashboard.js')}}"></script>
+<script src="/plugins/jquery-knob/jquery.knob.js"></script>
 
-<script src="{{asset('/js/jquery.core.js')}}"></script>
-<script src="{{asset('/js/jquery.app.js')}}"></script>
-<script src="{{asset('/plugins/dropzone/dist/dropzone.js')}}"></script>
+<script src="/pages/jquery.dashboard.js"></script>
 
-<script src="{{asset('/plugins/bootstrap-table/dist/bootstrap-table.min.js')}}"></script>
+<script src="/js/jquery.core.js"></script>
+<script src="/js/jquery.app.js"></script>
+<script src="/plugins/dropzone/dist/dropzone.js"></script>
 
-<script src="{{asset('/pages/jquery.bs-table.js')}}"></script>
-<script src="{{asset('/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js')}}" type="text/javascript"></script>
+<script src="/plugins/bootstrap-table/dist/bootstrap-table.min.js"></script>
+
+<script src="/pages/jquery.bs-table.js"></script>
+<script src="/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    jQuery(document).ready(function ($) {
+    jQuery(document).ready(function($) {
         $('.counter').counterUp({
             delay: 100,
             time: 1200
@@ -57,4 +58,5 @@
 
     });
 </script>
-<script src="{{asset('/js/custom.js')}}" type="text/javascript"></script>
+
+<script src="/js/custom.js"></script>
