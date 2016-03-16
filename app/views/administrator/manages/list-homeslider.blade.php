@@ -49,7 +49,12 @@
                                     <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and
                                     <code>color</code>.
                                 </p>
+                                <div class="form-group text-right">
+                                    <a href="{{URL::to('be_admin/add-slider')}}"
+                                       class="btn btn-primary waves-effect waves-light"> Add new slider</a>
+                                </div>
                                 <div class="row">
+
                                     <table data-toggle="table"
                                            data-show-columns="false"
                                            data-page-list="[5, 10, 20]"
@@ -74,10 +79,11 @@
                                             <td>{{$home_slider->s_name}}</td>
                                             <td>{{$home_slider->title}}</td>
                                             <td>{{$home_slider->sub_title}}</td>
-                                            <td><img width="100" class="img-responsive" src="{{asset($home_slider->home_slider)}}" alt=""></td>
+                                            <td><img width="100" class="img-responsive"
+                                                     src="{{asset($home_slider->home_slider)}}" alt=""></td>
                                             {{--<td>{{$home_sliders->is_confirmed?--}}
-                                        {{--'<span class="label label-table label-success">Active</span>'--}}
-                                        {{--:'<span class="label label-table label-danger">Inactivate</span>'}}</td>--}}
+                                            {{--'<span class="label label-table label-success">Active</span>'--}}
+                                            {{--:'<span class="label label-table label-danger">Inactivate</span>'}}</td>--}}
                                             <td>
                                                 <a href="{{URL::to('be_admin/home_sliders-profile',$home_slider->id)}}">
                                                     <i class="fa fa-eye"></i>
@@ -85,7 +91,8 @@
                                                 <a href="{{URL::to('be_admin/edit-home_sliders',$home_slider->id)}}">
                                                     <i class="glyphicon glyphicon-pencil"></i>
                                                 </a>
-                                                <a href="{{URL::to('be_admin/delete',$home_slider->id)}}" class="delete">
+                                                <a href="{{URL::to('be_admin/delete',$home_slider->id)}}"
+                                                   class="delete">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
                                             </td>
