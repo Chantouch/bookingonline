@@ -16,9 +16,14 @@ class HomeController extends BaseController
     |
     */
 
+    /**
+     * @return mixed
+     */
+
     public function getIndex()
     {
-        return View::make('pages.index');
+        $home_slider = HomeSlider::all();
+        return View::make('pages.index', array('home_slider' => $home_slider));
     }
 
     public function getContact()
@@ -70,4 +75,5 @@ class HomeController extends BaseController
         }
         return View::make('pages.result')->with('searchUser', $searchUser);
     }
+
 }
