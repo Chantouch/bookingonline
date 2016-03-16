@@ -80,7 +80,8 @@
                                             <td>{{$home_slider->title}}</td>
                                             <td>{{$home_slider->sub_title}}</td>
                                             <td><img width="100" class="img-responsive"
-                                                     src="{{asset('/uploads/homeslider/'.$home_slider->home_slider)}}" alt=""></td>
+                                                     src="{{asset('/uploads/homeslider/'.$home_slider->home_slider)}}"
+                                                     alt=""></td>
                                             {{--<td>{{$home_sliders->is_confirmed?--}}
                                             {{--'<span class="label label-table label-success">Active</span>'--}}
                                             {{--:'<span class="label label-table label-danger">Inactivate</span>'}}</td>--}}
@@ -88,7 +89,7 @@
                                                 <a href="{{URL::to('be_admin/home_sliders-profile',$home_slider->id)}}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
-                                                <a href="{{URL::to('be_admin/edit-home_sliders',$home_slider->id)}}">
+                                                <a href="{{URL::to('be_admin/update-home-slider',$home_slider->id)}}">
                                                     <i class="glyphicon glyphicon-pencil"></i>
                                                 </a>
                                                 <a href="{{URL::to('be_admin/delete',$home_slider->id)}}"

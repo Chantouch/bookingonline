@@ -31,11 +31,11 @@ class AdminController extends BaseController
     {
         $inputs = Input::all();
         $validator = Validator::make($inputs, [
-            'slider_name' => 'required|min:6|max:30',
+            'slider_name' => 'required|min:6|max:50',
             'title' => 'required|min:6|max:150',
             'sub_title' => 'required|min:6|max:150',
             'img_type' => 'mimes:jpeg,bmp,png|max:1000',
-            'home_slider' => 'required|image|min:1',
+            'home_slider' => 'required',
         ]);
 
         //upload image for slider
@@ -49,28 +49,25 @@ class AdminController extends BaseController
 //        }
 
         if (!Input::hasFile('home_slider')) {
-
-            echo 'Photo Can not be upload';
+            return Redirect::back()->with('alert-errors', 'Please choose an image to create a slider.');
         }
-
         $file = Input::file('home_slider');
         $photo = $this->upload($file, 'uploads/homeslider');
-        $inputs['pro_img'] = $photo['newName'];
-//        dd($inputs['pro_img']);
-
+        $inputs['slide_img'] = $photo['newName'];
+        $file_extension = $file->getClientOriginalExtension();
         $data = [
             's_name' => $inputs['slider_name'],
             'title' => $inputs['title'],
             'sub_title' => $inputs['sub_title'],
-            'home_slider' =>  $inputs['pro_img'],
-//            'img_type' => $file_extension,
+            'home_slider' => $inputs['slide_img'],
+            'img_type' => $file_extension,
         ];
-//        if ($validator->fails()) {
-//            return Redirect::back()->withErrors($validator)->withInput($data);
-//        }
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput($data);
+        }
         $success = HomeSlider::create($data);
         if (!$success) {
-            return Redirect::back()->withInput()->withError('Can not create !');
+            return Redirect::back()->withInput()->withError('Errors while creating slider. Plz try again later.');
         }
         return Redirect::to('be_admin/add-slider')->with('alert-success', 'Your home slider successfully created.');
     }
@@ -163,8 +160,45 @@ class AdminController extends BaseController
         $filename = $millisecond . '-' . str_random(5) . '-' . $file->getClientOriginalName();
         $file->move($destinationPath, $filename);
         return [
-            'newName'=>$filename,
-            'info'=>$file
+            'newName' => $filename,
+            'info' => $file,
         ];
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function getUpdateHomeSlider($id)
+    {
+        $home_slider = HomeSlider::findOrFail($id);
+        return View::make('administrator.manages.update-homeslider', array('home_slider' => $home_slider));
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function postUpdateHomeSlider($id)
+    {
+        $home_slider = HomeSlider::findOrfail($id);
+        $inputs = Input::all();
+        if ($inputs['home_slider'] == '') {
+            $inputs = array_except($inputs, 'home_slider');
+        }
+        $validator = Validator::make($inputs, [
+            'slider_name' => "required",
+            'title' => "required",
+            'sub_title' => "required",
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput(Input::all());
+        }
+
+        $home_slider->fill($inputs);
+        $home_slider->save();
+
+        return Redirect::to('be_admin/list-home-slider')->with('alert-success', 'Successfully updated your changed!');
     }
 }

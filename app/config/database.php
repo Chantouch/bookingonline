@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'bookingonline',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'Ch@n10uch',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

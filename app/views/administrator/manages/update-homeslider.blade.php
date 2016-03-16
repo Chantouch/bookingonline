@@ -52,13 +52,8 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         @include('alerts.alerts')
-                                        {{--<ul class="error">--}}
-                                        {{--@foreach($errors->all('<li>:message</li>')as $message)--}}
-                                        {{--{{$message}}--}}
-                                        {{--@endforeach--}}
-                                        {{--</ul>--}}
-                                        {{ Form::open(array('action' => 'AdminController@postAddSlider','files' => true,
-                                        'class'=>'form-horizontal', 'role'=>'form', 'id'=>'dropzone')) }}
+                                        {{ Form::model($home_slider, ['url' => 'be_admin/update-home-slider',$home_slider->id,'files' => true,
+                                        'class'=>'form-horizontal', 'role'=>'form', 'id'=>'dropzone']) }}
                                         <div class="form-group">
                                             <label for="slider name" class="col-md-2 control-label">Slider name</label>
                                             <div class="col-md-10">
