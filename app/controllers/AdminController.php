@@ -54,7 +54,7 @@ class AdminController extends BaseController
         }
 
         $file = Input::file('home_slider');
-        $photo = $this->upload($file, 'public/uploads/homeslider');
+        $photo = $this->upload($file, 'uploads/homeslider');
         $inputs['pro_img'] = $photo['newName'];
 //        dd($inputs['pro_img']);
 
