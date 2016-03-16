@@ -52,4 +52,22 @@ class HomeController extends BaseController
             return Redirect::back()->withErrors($validate)->withInput($data);
         }
     }
+
+    /**
+     *Search hotel
+     */
+    public function postSearchHotel()
+    {
+        $keywords = Input::get('search_hotel');
+//        $users = User::where('username', 'LIKE', '%' . $keywords . '%')->get();
+        $users = User::all();
+//        var_dump('search results');
+        $searchUser = new \Illuminate\Database\Eloquent\Collection();
+        foreach ($users as $user) {
+            if (Str::contains(Str::lower($user->username), Str::lower($keywords)))
+                $searchUser->add($user);
+            //var_dump($user->username);
+        }
+        return View::make('pages.result')->with('searchUser', $searchUser);
+    }
 }

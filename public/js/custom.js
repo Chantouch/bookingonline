@@ -13,3 +13,20 @@ $(document).ready(function () {
     });
 });
 
+var timer;
+
+function up() {
+    timer = setTimeout(function () {
+        var keywords = $('#search_hotel').val();
+
+        if (keywords.length > 0) {
+            $.post('http://bookingonline.com/search-hotel', {keywords: keywords}, function (markup) {
+                $('#search_hotel').html(markup);
+            });
+        }
+    }, 500);
+}
+
+function down() {
+    clearTimeout(timer);
+}

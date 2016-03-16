@@ -1,13 +1,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-{{HTML::style('css/custom.css')}}
-{{HTML::script('js/jquery.min.js')}}
-{{HTML::style('css/fwslider.css')}}
-{{HTML::script('js/jquery-ui.min.js')}}
-{{HTML::script('js/fwslider.js')}}
-{{HTML::style('css/jquery-ui.css')}}
-{{HTML::style('css/style.css')}}
-{{HTML::style('css/bootstrap.min.css')}}
-{{HTML::style('css/vert-offset.css')}}
+<link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+<link rel="stylesheet" href="{{asset('/css/fwslider.css')}}">
+<link rel="stylesheet" href="{{asset('/css/jquery-ui.css')}}">
+<link rel="stylesheet" href="{{asset('/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('/css/vert-offset.css')}}">
+{{--<link rel="stylesheet" href="{{asset('')}}">--}}
+<script src="{{asset('/js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/jquery-ui.min.js')}}"></script>
+<script src="{{asset('/js/fwslider.js')}}"></script>
+{{--<script src="{{asset('/')}}"></script>--}}
 <script>
     $(function () {
         $("#datepicker,#datepicker1").datepicker();

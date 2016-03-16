@@ -16,6 +16,9 @@ Route::controller('account', 'SessionsController');
 Route::group(array('before' => 'auth'), function () {
     Route::get('actionUsers/profile', array('before' => 'auth', 'uses' => 'UsersController@getProfile'));
 });
+
+//Route::controller('search-q', 'SearchController');
+
 //Booking Early Administrator
 Route::group(array('before' => 'be_admin'), function () {
     Route::get('be_admin', array('before' => 'be_admin', 'uses' => 'AdminController@getIndex'));
