@@ -90,8 +90,7 @@
                                            array('class' => 'control-label')) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::file('home_slider',array('class'=>'filestyle',
-                                            'data-buttonname'=>'btn-primary')) }}
+                                            {{ Form::file('home_slider',array('class'=>'filestyle','data-buttonname'=>'btn-primary')) }}
                                         </div>
                                         <div class="form-group">
                                             {{ Form::submit('Save', array('class' => 'btn btn-lg btn-block')) }}
