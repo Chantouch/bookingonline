@@ -39,20 +39,31 @@ class AdminController extends BaseController
         ]);
 
         //upload image for slider
-        if (Input::hasFile('home_slider')) {
-            $file = Input::file('home_slider');
-            $origin_name = $file->getClientOriginalName();
-            $file_extension = $file->getClientOriginalExtension();
-            $destinationPath = public_path() . '/uploads/homeslider/' . $origin_name;
-            $filename = $destinationPath . '' . str_random(32) . '.' . $file_extension;
-            Image::make($file->getRealPath())->resize('1698', '691')->save($filename);
+//        if (Input::hasFile('home_slider')) {
+//            $file = Input::file('home_slider');
+//            $origin_name = $file->getClientOriginalName();
+//            $file_extension = $file->getClientOriginalExtension();
+//            $destinationPath = public_path() . '/uploads/homeslider/' . $origin_name;
+//            $filename = $destinationPath . '' . str_random(32) . '.' . $file_extension;
+//            Image::make($file->getRealPath())->resize('1698', '691')->save($filename);
+//        }
+
+        if (!Input::hasFile('home_slider')) {
+
+            echo 'Photo Can not be upload';
         }
+        $file = Input::file('home_slider');
+        $photo = GeneralLibrary::upload($file, SystemProperties::$productPhotoPath);
+        dd($photo);
+        $inputs['pro_img'] = $photo['newName'];
+
+
         $data = [
             's_name' => $inputs['slider_name'],
             'title' => $inputs['title'],
             'sub_title' => $inputs['sub_title'],
-            'home_slider' => $filename,
-            'img_type' => $file_extension,
+//            'home_slider' => $filename,
+//            'img_type' => $file_extension,
         ];
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput($data);
