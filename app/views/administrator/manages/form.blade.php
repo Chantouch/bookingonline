@@ -28,6 +28,13 @@
     </div>
 </div>
 <div class="form-group">
+    {{ Form::label('avatar', 'Choose your image for home slider',
+   array('class' => 'col-sm-3 control-label')) }}
+    <div class="col-sm-4">
+        {{ Form::file('avatar',array('class'=>'filestyle','data-buttonname'=>'btn-primary')) }}
+    </div>
+</div>
+<div class="form-group">
     {{Form::label('password','Password',['class'=>'col-sm-3 control-label'])}}
     <div class="col-sm-4">
         {{Form::password('password',['placeholder'=>'Password','class'=>'form-control'])}}
