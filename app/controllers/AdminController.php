@@ -52,22 +52,22 @@ class AdminController extends BaseController
 
             echo 'Photo Can not be upload';
         }
-        $file = Input::file('home_slider');
-        $photo = GeneralLibrary::upload($file, SystemProperties::$productPhotoPath);
-        dd($photo);
-        $inputs['pro_img'] = $photo['newName'];
 
+        $file = Input::file('home_slider');
+        $photo = $this->upload($file, 'public/uploads/homeslider');
+        $inputs['pro_img'] = $photo['newName'];
+//        dd($inputs['pro_img']);
 
         $data = [
             's_name' => $inputs['slider_name'],
             'title' => $inputs['title'],
             'sub_title' => $inputs['sub_title'],
-//            'home_slider' => $filename,
+            'home_slider' =>  $inputs['pro_img'],
 //            'img_type' => $file_extension,
         ];
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput($data);
-        }
+//        if ($validator->fails()) {
+//            return Redirect::back()->withErrors($validator)->withInput($data);
+//        }
         $success = HomeSlider::create($data);
         if (!$success) {
             return Redirect::back()->withInput()->withError('Can not create !');
@@ -153,5 +153,18 @@ class AdminController extends BaseController
     {
         $home_slider = HomeSlider::orderBy('id')->paginate(2);
         return View::make('administrator.manages.list-homeslider', array('home_sliders' => $home_slider));
+    }
+
+    // import picture
+    public static function upload($file, $path)
+    {
+        $destinationPath = $path;
+        $millisecond = round(microtime(true) * 1000);
+        $filename = $millisecond . '-' . str_random(5) . '-' . $file->getClientOriginalName();
+        $file->move($destinationPath, $filename);
+        return [
+            'newName'=>$filename,
+            'info'=>$file
+        ];
     }
 }

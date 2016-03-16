@@ -6,7 +6,8 @@
  * Time: 7:52 PM
  */
 
-class GeneralLibrary {
+class GeneralLibrary
+{
 
     public static function upload($file, $path)
     {

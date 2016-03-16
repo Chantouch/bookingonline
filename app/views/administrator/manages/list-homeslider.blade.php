@@ -80,7 +80,7 @@
                                             <td>{{$home_slider->title}}</td>
                                             <td>{{$home_slider->sub_title}}</td>
                                             <td><img width="100" class="img-responsive"
-                                                     src="{{asset($home_slider->home_slider)}}" alt=""></td>
+                                                     src="{{asset('/uploads/homeslider/'.$home_slider->home_slider)}}" alt=""></td>
                                             {{--<td>{{$home_sliders->is_confirmed?--}}
                                             {{--'<span class="label label-table label-success">Active</span>'--}}
                                             {{--:'<span class="label label-table label-danger">Inactivate</span>'}}</td>--}}
