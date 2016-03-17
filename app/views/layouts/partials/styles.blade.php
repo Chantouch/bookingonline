@@ -1,9 +1,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<link rel="stylesheet" href="{{asset('/css/custom.css')}}">
 <link rel="stylesheet" href="{{asset('/css/fwslider.css')}}">
 <link rel="stylesheet" href="{{asset('/css/jquery-ui.css')}}">
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('/css/core.css')}}">
 <link rel="stylesheet" href="{{asset('/css/vert-offset.css')}}">
 {{--<link rel="stylesheet" href="{{asset('')}}">--}}
 <script src="{{asset('/js/jquery.min.js')}}"></script>
@@ -37,3 +37,5 @@
     #country {
     }
 </style>
+
+<link rel="stylesheet" href="{{asset('/css/custom.css')}}">

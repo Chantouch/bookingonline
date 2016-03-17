@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3">
-                        <h5>check-in-date:</h5>
+                        <h5>check-in</h5>
                         <div class="book_date">
                             <form>
                                 <label for="datepicker"></label>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="clearfix visible-xs-block"></div>
                     <div class="col-xs-6 col-sm-3">
-                        <h5>check-out-date:</h5>
+                        <h5>check-out</h5>
                         <div class="book_date">
                             <form>
                                 <label for="datepicker1"></label>
@@ -39,7 +39,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3">
+                    <div class="col-xs-6 col-sm-1">
                         <h5>Adults:</h5>
                         <label for="country"></label>
                         <select id="country" onchange="change_country(this.value)"
@@ -50,10 +50,12 @@
                             <option value="4">4</option>
                         </select>
                     </div>
+
+                    <div class="col-sm-2 m-t-22">
+                        {{Form::submit('Search', array('class'=>'btn btn-primary full-width vert-offset-top-1'))}}
+                    </div>
                 </div>
-                <div class="vert-offset-top-3">
-                    {{Form::submit('SEARCH', array('class'=>'margin-auto btn btn-success btn-lg'))}}
-                </div>
+
             </div>
             <div class="clear"></div>
         </div>

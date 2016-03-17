@@ -70,6 +70,7 @@
     background-color: #fff;
     float: left;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 #fwslider .progress {
