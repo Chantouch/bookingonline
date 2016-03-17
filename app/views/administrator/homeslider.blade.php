@@ -91,7 +91,7 @@
                                         </div>
                                         <input type="hidden" name="img_type">
                                         <div class="form-group">
-                                            {{ Form::label('home_slider', 'Choose your image for home slider',
+                                            {{ Form::label('home_slider', 'Choose your image for home slider (size must be 1698x690), not greater than 2MB',
                                            array('class' => 'control-label')) }}
                                         </div>
                                         <div class="form-group">

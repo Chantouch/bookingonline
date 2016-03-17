@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'bookingonline',
-			'username'  => 'root',
-			'password'  => 'Ch@n10uch',
+			'host'      => 'MYSQL5014.Smarterasp.net',
+			'database'  => 'db_9f4646_booking',
+			'username'  => '9f4646_booking',
+			'password'  => 'Ch2n10uch',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
